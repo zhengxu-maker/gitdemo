@@ -31,5 +31,11 @@ try:
 except FileNotFoundError as e:
 	print(e)
 	sys.exit()
+# When open item is a directory (python2)
+except IOError:
+    pass
+# When open item is a directory (python3)
+except IsADirectoryError:
+    pass
 
 
