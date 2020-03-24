@@ -65,4 +65,17 @@ for f_key, f_value in zip(file_info_keys, file_info_vales):
 
 # check the `file` is direcotry
 # print out the file stats
-
+if stat.S_ISDIR(file_stats[stat.ST_MODE]):
+    print("This a directory.")
+else:
+    file_stats_fmt = ''
+    print("\nThis is not a directory.")
+    stats_keys = ("st_mode (protection bits)", "st_ino (inode number)",
+                  "st_dev (device)", "st_nlink (number of hard links)",
+                  "st_uid (user ID of owner)", "st_gid (group ID of owner)",
+                  "st_size (file size bytes)",
+                  "st_atime (last access time seconds since epoch)",
+                  "st_mtime (last modification time)",
+                  "st_ctime (time of creation Windows)")
+    for s_key, s_value in zip(stats_keys, file_stats):
+        print(s_key, ' =', s_value)
