@@ -53,3 +53,16 @@ file_info = {
     't_char': t_char
 }
 # print out the file info
+file_info_keys = ('file name', 'file size', 'last modified', 'last accessed',
+                  'creation time', 'Total number of lines are',
+                  'Total number of characters are')
+file_info_vales = (file_info['fname'], str(file_info['fsize']) + " bytes",
+                   file_info['f_lm'], file_info['f_la'], file_info['f_ct'],
+                   file_info['no_of_lines'], file_info['t_char'])
+
+for f_key, f_value in zip(file_info_keys, file_info_vales):
+    print(f_key, ' =', f_value)
+
+# check the `file` is direcotry
+# print out the file stats
+
